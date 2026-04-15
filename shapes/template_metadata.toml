@@ -1,0 +1,70 @@
+# Refer to the datastore documentation for explanations and valid types/values
+dataset_id = ""
+description = ""
+anatomical_category = ""
+date_first_added = ""
+date_last_modified = ""
+aphiaID = 126436
+class = ""
+order = ""
+family = ""
+genus = ""
+species = ""
+vernacular_name = ""
+reference = ""
+activity_name = ""
+location = ""
+latitude = 0.0
+longitude = 0.0
+depth = 0.0
+date_collection = ""
+date_image = ""
+investigators = ["",]
+data_collection_description = ""
+note = ""
+imaging_method = ""
+shape_method = ""
+shape_method_processing = ""
+model_type = ""
+sound_speed_method = ""
+mass_density_method = ""
+dataset_size = 0.0 
+dataset_size_units = "megabyte"
+
+[[specimens]]
+specimen_id = ""
+specimen_condition = ""
+length = 0.0
+weight = 0.0
+length_units = "m"
+weight_units = "kg"
+length_type = ""
+shape_type = "outline"
+
+[[specimens.shapes]]
+anatomical_type = ""
+boundary = ""
+shape_units = "m"
+x = [0.0,]
+y = [0.0,]
+z = [0.0,]
+height = [0.0]
+width = [0.0]
+mass_density = [0.0,]
+mass_density_units = "kg/m^3"
+sound_speed_compressional = [0.0,]
+sound_speed_compressional_units = "m/s"
+
+[[specimens.shapes]]
+anatomical_type = ""
+boundary = ""
+shape_units = "m"
+x = [0.0,]
+y = [0.0,]
+z = [0.0,]
+height = [0.0]
+width = [0.0]
+mass_density = [0.0,]
+mass_density_units = "kg/m^3"
+sound_speed_compressional = [0.0,]
+sound_speed_compressional_units = "m/s"
