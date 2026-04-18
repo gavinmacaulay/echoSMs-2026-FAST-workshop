@@ -90,11 +90,7 @@ for path in datasets_source_dir.iterdir():
             # Validate the specimen data
             errored = False
             for error in validator.iter_errors(data):
-                print(error.instance_path)
-                print(error.evaluation_path)
-                print(error.schema_path)
-                # rprint(f'\n[yellow] Validation error with {error.message}', end='')
-                # rprint('[orange4]' + error.message)
+                print(error)
                 errored = True
 
             if errored:
