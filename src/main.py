@@ -11,10 +11,6 @@ import copy
 from datetime import datetime as dt
 from stat import S_IFDIR, S_IFREG
 from stream_zip import ZIP_64, stream_zip
-from urllib.request import urlretrieve
-from zipfile import ZipFile
-import os
-import shutil
 
 
 schema_url = 'https://ices-tools-dev.github.io/echoSMs/schema/data_store_schema/'
