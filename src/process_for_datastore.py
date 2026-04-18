@@ -21,7 +21,6 @@ import shutil
 import os
 from datetime import datetime, timezone
 from echosms import plot_specimen
-from shutil import make_archive
 
 datasets_source_dir = Path.home()/'datasets'
 datastore_final_dir = Path.home()/'datastore'
@@ -60,6 +59,7 @@ dataset = []
 error_count = 0
 rprint(f'Using datasets in [green]{datasets_source_dir}')
 rprint(f'Writing outputs to [green]{datastore_final_dir}\n')
+
 for path in datasets_source_dir.iterdir():
     if path.is_dir():
 
@@ -74,7 +74,7 @@ for path in datasets_source_dir.iterdir():
 
         # load each .toml file and combine into one echoSMs datastore structure
         # this can take lots of memory, but we do this on a capable machine...
-        for ff in path.glob('specimen*.toml'):
+        for ff in path.glob('*.toml'):
             print('  Loading ' + ff.name, end='')
 
             data = rtoml.load(ff)  # load the specimen data
@@ -136,10 +136,6 @@ for path in datasets_source_dir.iterdir():
 if error_count:
     rprint(f'[red]{error_count} datasets failed the verification')
 
-print('\nWriting a combined metadata file')
 json_bytes = orjson.dumps(dataset)
 with open(datastore_final_dir/metadata_final_filename, 'wb') as f:
     f.write(json_bytes)
-
-rprint(f'Compressing all data into [green]{datastore_final_dir.with_suffix(".zip")}')
-make_archive(str(datastore_final_dir), 'zip', datastore_final_dir)
